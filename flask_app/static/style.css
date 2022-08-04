@@ -1,0 +1,28 @@
+* {
+    font-family: 'Times New Roman';
+    margin: 5px auto;
+}
+
+.form {
+    background-color: cadetblue;
+    width: 300px;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid black;
+}
+
+.title {
+    text-decoration: underline;
+    color: gold;
+}
+
+.formInput {
+    color: white;
+    margin: 20px;
+    font-size: large;
+}
+
+.button {
+    font-size: 15px;
+    background-color: gold;
+}

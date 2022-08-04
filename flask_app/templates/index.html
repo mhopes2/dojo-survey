@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <div class="form">
+        <form action="/create_survey" method="POST">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <h1 class="title">Dojo Survey</h1>
+            <div class="formInput">
+                <label for='name' class="formInput">Name:</label><br>
+                <input type='text' name='name'>
+            </div>
+            <div class="formInput">
+                <label for='location'>Dojo Location:</label><br>
+                <select name='location'>
+                    <option value="">-- Select a location --</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Seattle">Seattle</option>
+                    <option value="Online">Online</option>
+                    <option value="Burbank">Burbank</option>
+                    <option value="Bellevue">Bellevue</option>
+                </select>
+            </div>
+            <div class="formInput">
+                <label for='language' class="formInput">Favorite Language:</label><br>
+                <select name='language'>
+                    <option value="">-- Select a language --</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="Python">Python</option>
+                    <option value="C#">C#</option>
+                </select>
+            </div>
+            <div>
+                <label for='comment' class="formInput">Comment (optional):</label>
+                <textarea name='comment' cols="50" rows="10"></textarea>
+            </div>
+            <input type="submit" value="Submit" class="button">
+        </form>
+    </div>
+</body>
+</html>
